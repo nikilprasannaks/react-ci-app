@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git 'https://github.com/your/repo.git' // update with your repo
+        git 'https://github.com/nikilprasannaks/react-ci-app'
       }
     }
 
@@ -29,7 +29,7 @@ pipeline {
 
   post {
     always {
-      junit '**/test-results.xml' // optional if you configure Jest to output results
+      echo 'Build finished'
     }
   }
 }
