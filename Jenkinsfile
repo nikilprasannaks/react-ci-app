@@ -16,11 +16,12 @@ pipeline {
       }
     }
 
-    stage('Run Tests in Docker') {
+    stage('Run Tests') {
       steps {
         script {
           docker.image('react-test-app').inside {
-            sh 'npm test'
+            sh 'npm install'       // <-- Ensure this is run
+            sh 'npm test'          // <-- Now this will find react-scripts
           }
         }
       }
